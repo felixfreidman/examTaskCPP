@@ -5,14 +5,14 @@ using namespace std;
 class Set {
 public:
 	vector<char> setInit;
-	//Добавить элемент во множество
+	//Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
 	vector<char>  appendMember(char symbol) {
 		setInit.push_back(symbol);
 		sort(setInit.begin(), setInit.end());
 		setInit.erase(unique(setInit.begin(), setInit.end()), setInit.end());
 		return setInit;
 	};
-	//Убрать элемент из множества
+	//Р’С‹С‡РёС‚Р°РЅРёРµ СЌР»РµРјРµРЅС‚Р°
 	vector<char>  evictMember(char symbol) {
 		int index = -1;
 		auto it = find(setInit.begin(), setInit.end(), symbol);
@@ -23,7 +23,7 @@ public:
 		setInit.erase(setInit.begin() + index);
 		return setInit;
 	};
-	//Сравнение множеств
+	//РЎСЂР°РІРЅРµРЅРёРµ РјРЅРѕР¶РµСЃС‚РІ
 	bool compareSets(Set set2) {
 		sort(setInit.begin(), setInit.end());
 		sort(set2.setInit.begin(), set2.setInit.end());
@@ -45,7 +45,7 @@ public:
 			return result;
 		}
 	};
-	//Пересечение множеств
+	//РџРµСЂРµСЃРµС‡РµРЅРёРµ РјРЅРѕР¶РµСЃС‚РІ
 	Set crossSets(Set set2) {
 		Set set3{};
 		int sizeOfSetFirst = setInit.size();
@@ -61,7 +61,7 @@ public:
 		}
 		return set3;
 	};
-	//Метод для отображения элементов множества
+	//РџСЂРѕСЃС‚Рѕ РІС‹РІРѕРґРёРј РІ РїРµС‡Р°С‚СЊ СЌР»РµРјРµРЅС‚С‹ РјРЅРѕР¶РµСЃС‚РІР°
 	void print() {
 		for (int i = 0; i < setInit.size(); i++) {
 			cout << " ' " << setInit[i] << " ' ";
@@ -69,7 +69,7 @@ public:
 		cout << "" << endl;
 	}
 };
-//Перегруженный оператор сложения: теперь это оператор объединения множеств
+//РџРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Р№ РѕРїРµСЂР°С‚РѕСЂ СЃР»РѕР¶РµРЅРёСЏ, С‚Рѕ РµСЃС‚СЊ РѕР±СЉРµРґРёРЅРµРЅРёРµ
 Set operator + (Set set1, Set set2) {
 	int sizeOfSetFirst = set1.setInit.size();
 	int sizeOfSetSecond = set2.setInit.size();
@@ -88,7 +88,7 @@ Set operator + (Set set1, Set set2) {
 	set1.setInit.erase(unique(set1.setInit.begin(), set1.setInit.end()), set1.setInit.end());
 	return set1;
 };
-//Перегруженный оператор вычитания: теперь это оператор вычитения множеств
+//РџРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Р№ РѕРїРµСЂР°С‚РѕСЂ РІС‹С‡РёС‚Р°РЅРёСЏ, С‚Рѕ РµСЃС‚СЊ РІС‹С‡РёС‚Р°РЅРёРµ РјРЅРѕР¶РµСЃС‚РІР° РёР· РјРЅРѕР¶РµСЃС‚РІР°
 Set operator - (Set set1, Set set2) {
 	sort(set1.setInit.begin(), set1.setInit.end());
 	sort(set2.setInit.begin(), set2.setInit.end());

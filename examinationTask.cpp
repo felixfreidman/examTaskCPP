@@ -9,6 +9,7 @@ using namespace std;
 //Я знаю, что стоило применить функцию, но у меня голова не варила уже так поздно либо я просто глупый.
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	Set set1{};
 	Set set2{};
 	Set set3{};
