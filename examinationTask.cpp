@@ -5,9 +5,7 @@
 #include <fstream>
 #include "Set.h"
 using namespace std;
-Set::Set(vector <char> setInitializer) {
-	setInit = setInitializer
-}
+
 
 	vector<char>  Set::appendMember(char symbol) {
 		setInit.push_back(symbol);
