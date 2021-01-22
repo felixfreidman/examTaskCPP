@@ -1,4 +1,4 @@
-﻿// examinationTask.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// examinationTask.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
@@ -109,7 +109,8 @@ int main()
 	}
 	else if (set3.compareSets(set4)) {
 		fout << "3 and 4" << endl;
-	} else
+	}
+	else
 		fout << "No such" << endl;
 	fout << "Несовпадающие предложения все остальные" << endl;
 	fout.close();
